@@ -109,61 +109,62 @@
     }
     /* --- Responsive Upgrade --- */
 
-/* Global base ukuran font */
+/* Base style */
 html {
-  font-size: 16px;
-}
-body {
-  font-size: 1rem; /* 1rem = 16px default */
+  font-size: 16px;         /* desktop baseline */
 }
 
-/* Tablet */
+body {
+  font-size: 1rem;         /* 1rem = 16px */
+  margin: 0;
+  padding: 0;
+}
+
+/* Grid wrapper: biar rapi di semua device */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* --- Responsive rules --- */
+
+/* Tablet & small laptops */
 @media (max-width: 1024px) {
   html { font-size: 15px; }
-  .hero-title { font-size: clamp(2rem, 5vw, 2.5rem); }
-  .hero-content h2 { font-size: clamp(2rem, 5vw, 2.5rem); }
-  .hero-content p { font-size: 1.1rem; }
+  .content-wrapper {
+    grid-template-columns: 1fr; /* tumpuk jadi satu kolom */
+  }
+  .hero-article {
+    height: 250px;
+  }
+  .hero-article h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
 }
 
-/* Smartphone landscape & portrait */
-@media (max-width: 768px) {
+/* Smartphones */
+@media (max-width: 600px) {
   html { font-size: 14px; }
-  .hero { padding: 0 1rem; }
-  .hero-content h2 { font-size: clamp(1.8rem, 6vw, 2.2rem); }
-  .hero-content p { font-size: 1rem; }
-
-  /* Grid sections collapse jadi 1 kolom */
-  .about-grid,
-  .services-grid,
-  .institutions-grid,
-  .news-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  header h1 { font-size: 1.3rem; }
+  article { font-size: 1rem; }
+  .hero-article {
+    height: 200px;
+    padding: 1.5rem;
   }
-
-  .card {
-    width: 90%;       /* kartu struktur biar pas layar HP */
-    max-width: 260px;
-  }
-
-  .institution-logo {
-    width: 90%;
-    height: auto;
+  .hero-article h2 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
   }
 }
 
-/* HP kecil banget */
-@media (max-width: 480px) {
+/* Extra small screens */
+@media (max-width: 360px) {
   html { font-size: 13px; }
-  .hero-title,
-  .hero-content h2 {
-    font-size: clamp(1.5rem, 7vw, 1.8rem);
-  }
-  .hero-content p {
-    font-size: 0.95rem;
-  }
 }
+
 
   </style>
 </head>
@@ -222,3 +223,4 @@ Ketua kelompok KKN yakni Muh.Farid Alfarizky menyampaikan bahwa Pekkae Lodge mem
 
 </body>
 </html>
+
