@@ -107,60 +107,62 @@
       color: #fff;
       border-radius: 20px 20px 0 0;
     }
-    /* Base style */
+    /* --- Responsive Upgrade --- */
+
+/* Global base ukuran font */
 html {
-  font-size: 16px;         /* desktop baseline */
+  font-size: 16px;
 }
-
 body {
-  font-size: 1rem;         /* 1rem = 16px */
-  margin: 0;
-  padding: 0;
+  font-size: 1rem; /* 1rem = 16px default */
 }
 
-/* Grid wrapper: biar rapi di semua device */
-.content-wrapper {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-/* --- Responsive rules --- */
-
-/* Tablet & small laptops */
+/* Tablet */
 @media (max-width: 1024px) {
   html { font-size: 15px; }
-  .content-wrapper {
-    grid-template-columns: 1fr; /* tumpuk jadi satu kolom */
-  }
-  .hero-article {
-    height: 250px;
-  }
-  .hero-article h2 {
-    font-size: clamp(1.4rem, 3vw, 1.8rem);
-  }
+  .hero-title { font-size: clamp(2rem, 5vw, 2.5rem); }
+  .hero-content h2 { font-size: clamp(2rem, 5vw, 2.5rem); }
+  .hero-content p { font-size: 1.1rem; }
 }
 
-/* Smartphones */
-@media (max-width: 600px) {
+/* Smartphone landscape & portrait */
+@media (max-width: 768px) {
   html { font-size: 14px; }
-  header h1 { font-size: 1.3rem; }
-  article { font-size: 1rem; }
-  .hero-article {
-    height: 200px;
-    padding: 1.5rem;
+  .hero { padding: 0 1rem; }
+  .hero-content h2 { font-size: clamp(1.8rem, 6vw, 2.2rem); }
+  .hero-content p { font-size: 1rem; }
+
+  /* Grid sections collapse jadi 1 kolom */
+  .about-grid,
+  .services-grid,
+  .institutions-grid,
+  .news-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  .hero-article h2 {
-    font-size: clamp(1.2rem, 5vw, 1.6rem);
+
+  .card {
+    width: 90%;       /* kartu struktur biar pas layar HP */
+    max-width: 260px;
+  }
+
+  .institution-logo {
+    width: 90%;
+    height: auto;
   }
 }
 
-/* Extra small screens */
-@media (max-width: 360px) {
+/* HP kecil banget */
+@media (max-width: 480px) {
   html { font-size: 13px; }
+  .hero-title,
+  .hero-content h2 {
+    font-size: clamp(1.5rem, 7vw, 1.8rem);
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+  }
 }
 
   </style>
@@ -201,21 +203,17 @@ body {
 
       <h3>Potensi Ekowisata Desa Kading</h3>
       <p>
-        hayo Kehadiran Pekkae Ecolodge and EcoRiver Cafe menambah daya tarik wisata di Desa Kading,
+        Kehadiran Pekkae Ecolodge and EcoRiver Cafe menambah daya tarik wisata di Desa Kading,
         selain destinasi alam lainnya. Meskipun jarang disorot media, tempat ini memiliki potensi
         besar untuk menjadi ikon ekowisata Barru, khususnya bagi wisatawan yang mencari ketenangan
         dan kedekatan dengan alam.
       </p>
-    </article>
+      <p>Mahasiswa Kuliah Kerja Nyata (KKN) STIE Amkop Makassar Gelombang 32 melakukan kegiatan observasi di objek wisata Pekkae Lodge, Desa Kading, Kabupaten Barru, pada 30 Agustus 2025. Kegiatan ini merupakan bagian dari program kerja KKN untuk memetakan potensi wisata lokal sekaligus mendukung pengembangan ekonomi kreatif berbasis desa.
+<h3>Observasi dari Mahasiswa KKN STIE AMKOP MAKASSAR TAHUN 2025</h3>
+Selama observasi, tim KKN STIE AMKOP MAKASSAR berinteraksi langsung dengan perangkat desa untuk mengumpulkan data tentang daya tarik wisata, aksesibilitas, serta peluang peningkatan fasilitas. Mereka juga mencatat aspek lingkungan, kebersihan, dan potensi kegiatan ekonomi turunan—seperti kuliner lokal dan jasa pemandu—yang dapat dikembangkan untuk menarik lebih banyak wisatawan.
 
-    <aside>
-      <h4>Berita Lainnya</h4>
-      <ul>
-        <li><a href="berita-gotongroyong.html">Kegiatan Gotong Royong Desa</a></li>
-        <li><a href="berita-sosialisasi.html">Sosialisasi Program Desa</a></li>
-        <li><a href="berita-festival.html">Festival Budaya Kading</a></li>
-      </ul>
-    </aside>
+Ketua kelompok KKN yakni Muh.Farid Alfarizky menyampaikan bahwa Pekkae Lodge memiliki potensi besar sebagai destinasi ekowisata karena keindahan alam sekitar, suasana yang tenang, dan dukungan masyarakat desa yang ramah. Temuan observasi ini akan menjadi dasar penyusunan rekomendasi strategis berupa promosi digital, paket wisata berbasis budaya, dan rencana pelatihan bagi warga untuk meningkatkan kualitas layanan wisata.</p>
+    </article>
   </div>
 
   <footer>
@@ -224,6 +222,3 @@ body {
 
 </body>
 </html>
-
-
-
